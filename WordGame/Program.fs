@@ -158,7 +158,7 @@ let main argv =
         match isGetHint cmd, isValidWord cmd allWords usedWords lastWord with 
         | true, _ -> 
             Console.ForegroundColor <- ConsoleColor.Yellow
-            Console.WriteLine( "Seriosuly... you need help with this one? I thought you were a pro..." )
+            Console.WriteLine( "Seriously... you need help with this one? I thought you were a pro..." )
             getValidNextWords allWords usedWords lastWord
             |> Seq.iter ( fun x -> 
                 Console.WriteLine( x )
@@ -167,7 +167,7 @@ let main argv =
             Console.ForegroundColor <- ConsoleColor.Green
             Console.WriteLine( "Word accepted. Well done mate!" )
             usedWords.Add( cmd ) |> ignore
-
+            lastWord <- cmd 
             Console.ForegroundColor <- ConsoleColor.White
             Console.WriteLine( "Computer turn " )
             match getNextWord allWords usedWords lastWord with 
